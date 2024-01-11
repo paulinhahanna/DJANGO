@@ -1,0 +1,53 @@
+{%load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de produtos</title>
+</head>
+<body background="{% static 'home/images_m/fundo.png' %}">
+    <div style="width: 900px; margin: 20px auto " >
+        <img width="213" src="{% static 'home/images_m/logo.png' %}">
+        <a href="#"style="margin-left: 50%">Home</a> |
+        <a href="#">Quem Somos</a> |
+        <a href="#">Contato</a> |
+    </div>
+    <div style="width: 900px; margin: -8px auto " >
+        <img width="890" src="{% static 'home/images_m/capa.png' %}">
+        <div style="width: 900px; margin: 0px auto " >
+            <div style="width: 200px; display: inline-block;">
+                <h3>Nome: produto</h3>
+                <p>Descrição: Lorem ipsum dolor sit amrt.</p>
+                <p>Categoria: Higiene</p>
+                <hr>
+                <span>preço:R$ 29,90</span>
+                <br>
+                <a href="#">Saiba mais</a>
+
+            </div>
+            <div style="width: 200px; display: inline-block;">
+                <h3>Nome: produto</h3>
+                <p>Descrição: Lorem ipsum dolor sit amrt.</p>
+                <p>Categoria: Higiene</p>
+                <hr>
+                <span>preço:R$ 29,90</span>
+                <br>
+                <a href="#">Saiba mais</a>
+            </div>
+             <div style="width: 200px; display: inline-block;">
+                {% for produto in produtos %}
+                    <h3>Nome: {{produto.nome_produto}}</h3>
+                    <p>Descrição: Lorem ipsum dolor sit amrt.</p>
+                    <p>Categoria: Higiene</p>
+                    <hr>
+                    <span>preco{{produto.preco}}</span>
+                    <br>
+                    <a href="#">Saiba mais</a>
+                    {% endfor %}
+            </div>    
+                
+        </div>
+        
+</body>
+</html>
